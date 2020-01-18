@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pricing Calculator</title>
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/9a084effb3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="results">
+      <h1><i class="fas fa-calculator"></i> Pricing Calculator</h1>
+      <p class="total-cost">total <span>£2,600.00</span></p>
+    </div>
+
+    <div class="calculator">
+      <form>
+        <fieldset class="form-header" name="Pages">
+          <div class="form-top">
+            <legend>Pages</legend>
+            <button class="create-item-btn">Add page <i class="fas fa-plus-circle"></i></button>
+          </div>
+          <fieldset class="form-group">
+            <label for="page-name">Page name</label>
+            <input type="text" name="page-name" placeholder="enter page title">
+          </fieldset>
+          <fieldset class="form-group">
+            <label for="content-words">Do we need to write content?</label>
+            <select name="content" id="content">
+              <option value="0" selected>No</option>
+              <option value="300">300 words</option>
+              <option value="600">600 words</option>
+              <option value="900">900 words</option>
+            </select>
+          </fieldset>
+          <fieldset class="form-group">
+            <label for="content-words">Do we need stock images, if so how many?</label>
+            <select name="content-words" id="content-words">
+              <option value="0" selected>No</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="2">3</option>
+              <option value="2">4</option>
+              <option value="2">5</option>
+            </select>
+          </fieldset>
+          <fieldset class="radio-group radio-vertical">
+            <legend>Which layout would you like?</legend>
+            <label for="full-width-layout">
+              <input type="radio" name="page-layout" id="full-width-layout" checked> Full Width Layout
+            </label>
+            <label for="sidebar-layout">
+              <input type="radio" name="page-layout" id="sidebar-layout"> 1 Column with sidebar layout
+            </label>
+            <label for="3col-hero-layout">
+              <input type="radio" name="page-layout" id="3col-hero-layout"> 3 Column with hero image layout
+            </label>
+          </fieldset>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
