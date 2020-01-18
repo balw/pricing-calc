@@ -18,7 +18,7 @@
 
     <div class="calculator">
       <form>
-        <fieldset class="form-header" name="Pages">
+        <fieldset class="form-set" name="Pages">
           <div class="form-top">
             <legend>Pages</legend>
             <button class="create-item-btn">Add page <i class="fas fa-plus-circle"></i></button>
@@ -58,6 +58,44 @@
             <label for="3col-hero-layout">
               <input type="radio" name="page-layout" id="3col-hero-layout"> 3 Column with hero image layout
             </label>
+          </fieldset>
+        </fieldset>
+
+        <fieldset class="form-set" name="Hosting and security">
+          <div class="form-top">
+            <legend>Hosting, Security &amp; Extras</legend>
+          </div>
+          <fieldset class="radio-group radio-vertical">
+            <legend>How is the site going to be hosted?</legend>
+            <label for="with-us">
+              <input type="radio" name="deployment" id="with-us" checked> With us
+            </label>
+            <label for="thirdp-deploy">
+              <input type="radio" name="deployment" id="thirdp-deploy"> With a third party, but we need to deploy.
+            </label>
+            <label for="thirdp-no-deploy">
+              <input type="radio" name="deployment" id="thirdp-no-deploy"> With a third party, they will deploy.
+            </label>
+          </fieldset>
+          <fieldset class="checkbox-group" id="hosted-options">
+            <legend>Please tick any addtional products / services required</legend>
+            <input type="checkbox" name="hosted-options" id="ssl" value="ssl">
+            <label for="ssl">SSL Certificate</label>
+            <input type="checkbox" name="hosted-options" id="sec-maintenance" value="sec-maintenance">
+            <label for="sec-maintenance">Security Maintenance</label>
+            <input type="checkbox" name="hosted-options" id="domain-name" value="domain-name">
+            <label for="domain-name">Domain Name</label>
+            <input type="checkbox" name="cms-training" id="cms-training" value="cms-training">
+            <label for="cms-training">CMS Training (30mins)</label>
+            <input type="checkbox" name="hosted-options" id="logo-design" value="logo-design">
+            <label for="logo-design">Logo Design</label>
+          </fieldset>
+          <fieldset class="form-group extras-field">
+            <legend>Extra Work</legend>
+            <label class="inline-label" for="extras-price">Price</label>
+            <input type="number" id="extras-price" name="extras-price" min="0" placeholder="enter the price">
+            <label for="extras-notes">Please state the extra work below</label>
+            <textarea name="extra-notes" id="extra-notes" cols="50" rows="10"></textarea>
           </fieldset>
         </fieldset>
       </form>

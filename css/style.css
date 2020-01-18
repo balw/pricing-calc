@@ -66,6 +66,7 @@ body {
   border: none;
   font-family: inherit;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .create-item-btn i {
@@ -87,14 +88,14 @@ fieldset {
 }
 
 
-.form-header {
+.form-set {
   background-color: #0b3c49;
   padding: 5rem 6rem;
   border-radius: 5px;
 }
 
-.form-group fieldset:first-of-type label {
-  margin-top: 50rem;
+.form-set:not(:last-child) {
+  margin-bottom: 5rem;
 }
 
 .form-top legend {
@@ -105,18 +106,26 @@ fieldset {
   text-transform: uppercase;
 }
 
-.form-group label:first-of-type, .radio-group legend {
+.form-group label, .radio-group legend, .checkbox-group legend, .extras-field legend {
   font-size: 2.4rem;
   display: block;
   color: #fff;
   margin-bottom: 2.5px;
 }
 
-.form-group, .radio-group {
+.extras-field label {
+  font-size: 2rem;
+}
+
+.extras-field label {
+  margin-top: 10px;
+}
+
+.form-group, .radio-group, .checkbox-group {
   margin-top: 2rem;
 }
 
-input[type="text"] {
+input[type="text"], input[type="number"] {
   padding: 10px 20px;
   outline: none;
   border: none;
@@ -125,7 +134,11 @@ input[type="text"] {
   display: block;
 }
 
-input[type="text"]::placeholder {
+/* input[type="number"] {
+  display: inline-block;
+} */
+
+input[type="text"]::placeholder, input[type="number"]::placeholder {
   color: #707070;
   font-size: 1.2rem;
   font-weight: 400;
@@ -138,20 +151,34 @@ select {
   font-size: 11px;
 }
 
-.radio-group label {
+.radio-group label, .checkbox-group label {
  padding: 0 2.5rem 0 1rem;
+ font-size: 1.6rem;
  color: #fff;
 }
 
 .radio-vertical label {
   display: block;
-  font-size: 1.6rem;
   margin-bottom: 5px;
   font-weight: 400;
 }
 
 .radio-vertical input[type="radio"] {
   margin-right: 5px;
+}
+
+.form-group .inline-label {
+  display: inline-block;
+  padding-right: 5px;
+}
+
+textarea {
+  display: block;
+  border-radius: 5px;
+  margin-top: 1rem;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.6rem;
 }
 
 /* select styles */
