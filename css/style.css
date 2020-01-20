@@ -14,20 +14,30 @@ body {
 }
 
 .wrapper {
-  margin: 4rem 7rem;
+  margin: 4rem 5rem;
   display: flex;
 }
 
-/* RESULTS SECTION */
+.btn {
+  background: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/****
+RESULTS SECTION 
+****/
+
 .results {
   background-color: #5a7d7c;
-  padding: 5rem 6rem;
+  padding: 4rem 5rem;
   width: 30vw;
   border-radius: 5px;
+  color: #fff;
 }
 
 .results h1 {
-  color: #fff;
   font-weight: 700;
   font-size: 2.1rem;
   text-transform: uppercase;
@@ -41,7 +51,6 @@ body {
 
 .total-cost {
   font-size: 3rem;
-  color: #fff;
   text-align: center;
   padding-bottom: 1rem;
   border-bottom: 3px #fff solid;
@@ -52,24 +61,94 @@ body {
   padding-left: 2rem;
 }
 
-/* CALCULATOR SECTION */
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  background-color: #0b3c49;
+  border-radius: 2px 2px 0 0;
+}
+
+.results h2 {
+  font-size: 2.4rem;
+  margin: 3rem 0 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.results-section {
+  margin-top: 1.5rem;
+}
+
+.results-heading {
+  border-bottom: solid 2px #608887;
+}
+
+/* Results item */
+.results-item h3 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.results-item ul li  {
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+.results-item ul li span  {
+  font-weight: 600;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+}
+
+.results-item {
+  margin-top: 1.5rem;
+  background-color: #608887;
+  border-radius: 2px;
+}
+
+.results-item ul {
+  padding: 1.5rem 2.5rem;
+}
+
+.btn-delete {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.btn-delete i {
+  vertical-align: middle;
+  color: #ef626b;
+  font-size: 1.4rem;
+  padding-left: 2px;
+}
+
+.btn-cross i {
+  color: #f73643;
+  font-size: 1.2rem;
+  padding-left: 4px;
+}
+
+
+/****
+ CALCULATOR SECTION
+****/
 .calculator {
   padding-left: 6rem;
   flex-grow: 1;
-}
-
-.create-item-btn {
   color: #fff;
-  font-size: 3rem;
-  text-transform: uppercase;
-  background: none;
-  border: none;
-  font-family: inherit;
-  font-weight: 700;
-  cursor: pointer;
 }
 
-.create-item-btn i {
+.btn-add {
+  font-size: 3rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.btn-add i {
   padding-left: 5px;
   font-size: 2.8rem;
   color: #c3eb78;
@@ -90,7 +169,7 @@ fieldset {
 
 .form-set {
   background-color: #0b3c49;
-  padding: 5rem 6rem;
+  padding: 4rem 5rem;
   border-radius: 5px;
 }
 
@@ -102,14 +181,12 @@ fieldset {
   font-size: 3.8rem;
   font-weight: 700;
   letter-spacing: 2px;
-  color: #fff;
   text-transform: uppercase;
 }
 
 .form-group label, .radio-group legend, .checkbox-group legend, .extras-field legend {
   font-size: 2.4rem;
   display: block;
-  color: #fff;
   margin-bottom: 2.5px;
 }
 
@@ -134,11 +211,7 @@ input[type="text"], input[type="number"] {
   display: block;
 }
 
-/* input[type="number"] {
-  display: inline-block;
-} */
-
-input[type="text"]::placeholder, input[type="number"]::placeholder {
+input[type="text"]::placeholder, input[type="number"]::placeholder, textarea::placeholder {
   color: #707070;
   font-size: 1.2rem;
   font-weight: 400;
@@ -154,7 +227,6 @@ select {
 .radio-group label, .checkbox-group label {
  padding: 0 2.5rem 0 1rem;
  font-size: 1.6rem;
- color: #fff;
 }
 
 .radio-vertical label {
