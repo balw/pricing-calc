@@ -69,11 +69,11 @@
           </div>
           <fieldset class="form-group">
             <label for="page-name">Page name</label>
-            <input type="text" name="page-name" placeholder="enter page title">
+            <input type="text" name="page-name" data-itemkey="pageName" placeholder="enter page title">
           </fieldset>
           <fieldset class="form-group">
             <label for="content-words">Do we need to write content?</label>
-            <select name="content" id="content">
+            <select name="content" data-itemkey="content" id="content">
               <option value="0" selected>No</option>
               <option value="300">300 words</option>
               <option value="600">600 words</option>
@@ -82,7 +82,7 @@
           </fieldset>
           <fieldset class="form-group">
             <label for="stock-images">Do we need stock images, if so how many?</label>
-            <select name="stock-images" id="stock-images">
+            <select name="stock-images" data-itemkey="images" id="stock-images">
               <option value="0" selected>No</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -94,13 +94,16 @@
           <fieldset class="radio-group radio-vertical">
             <legend>Which layout would you like?</legend>
             <label for="full-width-layout">
-              <input type="radio" name="page-layout" value="fullwidth" id="full-width-layout" checked> Full Width Layout
+              <input type="radio" name="page-layout" data-itemkey="layout" value="fullwidth" id="full-width-layout"
+                checked> Full Width Layout
             </label>
             <label for="sidebar-layout">
-              <input type="radio" name="page-layout" value="1colside" id="sidebar-layout"> 1 Column with sidebar layout
+              <input type="radio" name="page-layout" data-itemkey="layout" value="1colside" id="sidebar-layout"> 1
+              Column with sidebar layout
             </label>
             <label for="3col-hero-layout">
-              <input type="radio" name="page-layout" value="3colhero" id="3col-hero-layout"> 3 Column with hero image
+              <input type="radio" name="page-layout" data-itemkey="layout" value="3colhero" id="3col-hero-layout"> 3
+              Column with hero image
               layout
             </label>
           </fieldset>
@@ -115,24 +118,29 @@
           <fieldset class="radio-group radio-vertical">
             <legend>How is the site going to be hosted?</legend>
             <label for="with-us">
-              <input type="radio" name="deployment" id="with-us" checked> With us
+              <input type="radio" data-itemkey="hosted" name="deployment" id="with-us" checked> With us
             </label>
             <label for="thirdp-deploy">
-              <input type="radio" name="deployment" id="thirdp-deploy"> With a third party, but we need to deploy.
+              <input type="radio" data-itemkey="hosted" name="deployment" id="thirdp-deploy"> With a third party, but we
+              need to deploy.
             </label>
             <label for="thirdp-no-deploy">
-              <input type="radio" name="deployment" id="thirdp-no-deploy"> With a third party, they will deploy.
+              <input type="radio" data-itemkey="hosted" name="deployment" id="thirdp-no-deploy"> With a third party,
+              they will deploy.
             </label>
           </fieldset>
           <fieldset class="checkbox-group" id="hosted-options">
             <legend>Please tick any addtional products / services required</legend>
-            <input type="checkbox" name="hosted-options" id="ssl" value="ssl">
+            <input type="checkbox" name="hosted-options" data-itemkey="hostedOptions" id="ssl" value="ssl">
             <label for="ssl">SSL Certificate</label>
-            <input type="checkbox" name="hosted-options" id="sec-maintenance" value="sec-maintenance">
+            <input type="checkbox" name="hosted-options" data-itemkey="hostedOptions" id="sec-maintenance"
+              value="sec-maintenance">
             <label for="sec-maintenance">Security Maintenance</label>
-            <input type="checkbox" name="hosted-options" id="domain-name" value="domain-name">
+            <input type="checkbox" name="hosted-options" data-itemkey="hostedOptions" id="domain-name"
+              value="domain-name">
             <label for="domain-name">Domain Name</label>
-            <input type="checkbox" name="cms-training" id="cms-training" value="cms-training">
+            <input type="checkbox" name="hosted-options" data-itemkey="hostedOptions" id="cms-training"
+              value="cms-training">
             <label for="cms-training">CMS Training (30mins)</label>
             <input type="checkbox" name="hosted-options" id="logo-design" value="logo-design">
             <label for="logo-design">Logo Design</label>
@@ -148,12 +156,13 @@
           </div>
           <div class="form-group">
             <label for="extras-price">Price</label>
-            <input type="number" id="extras-price" name="extras-price" min="0" placeholder="enter the price">
+            <input type="number" id="extras-price" data-itemkey="extraPrice" name="extras-price" min="0"
+              placeholder="enter the price">
           </div>
           <div class="form-group">
             <label for="extras-notes">Please state the extra work below</label>
-            <textarea name="extra-notes" placeholder="enter more details here" id="extra-notes" cols="50"
-              rows="10"></textarea>
+            <textarea name="extra-notes" data-itemkey="extraDetails" placeholder="enter more details here"
+              id="extra-notes" cols="50" rows="10"></textarea>
           </div>
         </fieldset>
       </form>
