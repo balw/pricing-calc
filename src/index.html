@@ -61,8 +61,8 @@
     </div>
 
     <div class="calculator">
-      <form>
-        <fieldset class="form-set" name="Pages">
+      <form class="calc-form" data-item="page">
+        <fieldset class="form-set">
           <div class="form-top">
             <legend>Pages</legend>
             <button class="btn btn-add">Add page <i class="fas fa-plus-circle"></i></button>
@@ -81,8 +81,8 @@
             </select>
           </fieldset>
           <fieldset class="form-group">
-            <label for="content-words">Do we need stock images, if so how many?</label>
-            <select name="content-words" id="content-words">
+            <label for="stock-images">Do we need stock images, if so how many?</label>
+            <select name="stock-images" id="stock-images">
               <option value="0" selected>No</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -94,16 +94,20 @@
           <fieldset class="radio-group radio-vertical">
             <legend>Which layout would you like?</legend>
             <label for="full-width-layout">
-              <input type="radio" name="page-layout" id="full-width-layout" checked> Full Width Layout
+              <input type="radio" name="page-layout" value="fullwidth" id="full-width-layout" checked> Full Width Layout
             </label>
             <label for="sidebar-layout">
-              <input type="radio" name="page-layout" id="sidebar-layout"> 1 Column with sidebar layout
+              <input type="radio" name="page-layout" value="1colside" id="sidebar-layout"> 1 Column with sidebar layout
             </label>
             <label for="3col-hero-layout">
-              <input type="radio" name="page-layout" id="3col-hero-layout"> 3 Column with hero image layout
+              <input type="radio" name="page-layout" value="3colhero" id="3col-hero-layout"> 3 Column with hero image
+              layout
             </label>
           </fieldset>
         </fieldset>
+      </form>
+
+      <form class="calc-form hosting-form" data-item="hosting">
         <fieldset class="form-set" name="Hosting and security">
           <div class="form-top">
             <legend>Hosting, Security &amp; Extras</legend>
@@ -133,19 +137,29 @@
             <input type="checkbox" name="hosted-options" id="logo-design" value="logo-design">
             <label for="logo-design">Logo Design</label>
           </fieldset>
-          <fieldset class="form-group extras-field">
+        </fieldset>
+      </form>
+
+      <form class="calc-form bespoke-form" data-item="extras">
+        <fieldset class="form-set">
+          <div class="form-top">
             <legend>Extra Work</legend>
-            <label class="inline-label" for="extras-price">Price</label>
+            <button class="btn btn-add">Add Extra Work <i class="fas fa-plus-circle"></i></button>
+          </div>
+          <div class="form-group">
+            <label for="extras-price">Price</label>
             <input type="number" id="extras-price" name="extras-price" min="0" placeholder="enter the price">
+          </div>
+          <div class="form-group">
             <label for="extras-notes">Please state the extra work below</label>
             <textarea name="extra-notes" placeholder="enter more details here" id="extra-notes" cols="50"
               rows="10"></textarea>
-          </fieldset>
+          </div>
         </fieldset>
       </form>
     </div>
   </div>
-  <script src="js/main.js"></script>
+
 </body>
 
 </html>
