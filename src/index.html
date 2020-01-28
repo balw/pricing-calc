@@ -74,35 +74,33 @@
           <fieldset class="form-group">
             <label for="content-words">Do we need to write content?</label>
             <select name="content" data-itemkey="content" id="content">
-              <option value="0" selected>No</option>
-              <option value="300">300 words</option>
-              <option value="600">600 words</option>
-              <option value="900">900 words</option>
+              <option value="0|0" selected>No</option>
+              <option value="300 words|40">300 words</option>
+              <option value="600 words|55">600 words</option>
+              <option value="900 words|70">900 words</option>
             </select>
           </fieldset>
           <fieldset class="form-group">
             <label for="stock-images">Do we need stock images, if so how many?</label>
             <select name="stock-images" data-itemkey="images" id="stock-images">
-              <option value="0" selected>No</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
+              <option value="0|0" selected>No</option>
+              <option value="1 image|1">1</option>
+              <option value="3 images|2">3</option>
+              <option value="5 images|4">5</option>
             </select>
           </fieldset>
           <fieldset class="radio-group radio-vertical">
             <legend>Which layout would you like?</legend>
             <label for="full-width-layout">
-              <input type="radio" name="page-layout" data-itemkey="layout" value="fullwidth" id="full-width-layout"
+              <input type="radio" name="page-layout" data-itemkey="layout" value="fullwidth|100" id="full-width-layout"
                 checked> Full Width Layout
             </label>
             <label for="sidebar-layout">
-              <input type="radio" name="page-layout" data-itemkey="layout" value="1colside" id="sidebar-layout"> 1
+              <input type="radio" name="page-layout" data-itemkey="layout" value="1colside|150" id="sidebar-layout"> 1
               Column with sidebar layout
             </label>
             <label for="3col-hero-layout">
-              <input type="radio" name="page-layout" data-itemkey="layout" value="3colhero" id="3col-hero-layout"> 3
+              <input type="radio" name="page-layout" data-itemkey="layout" value="3colhero|200" id="3col-hero-layout"> 3
               Column with hero image
               layout
             </label>
@@ -118,32 +116,35 @@
           <fieldset class="radio-group radio-vertical">
             <legend>How is the site going to be hosted?</legend>
             <label for="with-us">
-              <input type="radio" data-itemkey="hosted" name="deployment" id="with-us" checked> With us
+              <input type="radio" data-itemkey="hosted" value="With us|125" name="deployment" id="with-us" checked> With
+              us
             </label>
             <label for="thirdp-deploy">
-              <input type="radio" data-itemkey="hosted" name="deployment" id="thirdp-deploy"> With a third party, but we
+              <input type="radio" data-itemkey="hosted" value="Deploy only|75" name="deployment" id="thirdp-deploy">
+              With a third party, but we
               need to deploy.
             </label>
             <label for="thirdp-no-deploy">
-              <input type="radio" data-itemkey="hosted" name="deployment" id="thirdp-no-deploy"> With a third party,
+              <input type="radio" data-itemkey="hosted" value="Send files only|0" name="deployment"
+                id="thirdp-no-deploy"> With a third party,
               they will deploy.
             </label>
           </fieldset>
           <fieldset class="checkbox-group" id="hosted-options">
             <legend>Please tick any addtional products / services required</legend>
-            <input type="checkbox" name="hosted-options" data-itemkey="hostedOptions" id="ssl" value="ssl">
+            <input type="checkbox" name="hosted-options" data-itemkey="hostedOptions" id="ssl" value="ssl|50">
             <label for="ssl">SSL Certificate</label>
             <input type="checkbox" name="hosted-options" data-itemkey="hostedOptions" id="sec-maintenance"
-              value="sec-maintenance">
+              value="sec-maintenance|100">
             <label for="sec-maintenance">Security Maintenance</label>
             <input type="checkbox" name="hosted-options" data-itemkey="hostedOptions" id="domain-name"
-              value="domain-name">
+              value="domain-name|10">
             <label for="domain-name">Domain Name</label>
             <input type="checkbox" name="hosted-options" data-itemkey="hostedOptions" id="cms-training"
-              value="cms-training">
+              value="cms-training|100">
             <label for="cms-training">CMS Training (30mins)</label>
             <input type="checkbox" name="hosted-options" id="logo-design" value="logo-design">
-            <label for="logo-design">Logo Design</label>
+            <label for="logo-design|250">Logo Design</label>
           </fieldset>
         </fieldset>
       </form>
