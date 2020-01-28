@@ -3557,10 +3557,35 @@ eval("/**\n * Copyright (c) 2014-present, Facebook, Inc.\n *\n * This source cod
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("\n\n//# sourceURL=webpack:///./src/js/main.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _models_Results__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./models/Results */ \"./src/js/models/Results.js\");\n/* harmony import */ var _views_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./views/base */ \"./src/js/views/base.js\");\nfunction _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }\n\nfunction _nonIterableSpread() { throw new TypeError(\"Invalid attempt to spread non-iterable instance\"); }\n\nfunction _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === \"[object Arguments]\") return Array.from(iter); }\n\nfunction _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }\n\n\n\nvar state = {};\nstate.results = new _models_Results__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\nwindow.state = state;\n/**\n * ITEM CONTROLLER\n */\n\nvar itemController = function itemController(cur) {\n  // Determine item type\n  if (cur.dataset.item === 'page') {\n    // Get the item values\n    _toConsumableArray(cur.elements).forEach(function (el) {\n      if (el.type === 'text' || el.type === 'select-one' || el.checked) {\n        console.log(el.dataset.itemkey);\n        console.log(el.value);\n      }\n    });\n  } else if (cur.dataset.item === 'extras') {\n    console.log(cur.elements);\n  }\n}; // listen for add item buttons on the calculator\n\n\n_views_base__WEBPACK_IMPORTED_MODULE_1__[\"elements\"].calcForms.forEach(function (el) {\n  el.addEventListener('submit', function (e) {\n    e.preventDefault();\n    itemController(e.target);\n  });\n});\n\n//# sourceURL=webpack:///./src/js/main.js?");
+
+/***/ }),
+
+/***/ "./src/js/models/Results.js":
+/*!**********************************!*\
+  !*** ./src/js/models/Results.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Results; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\n// results - []\n// results.pages - []\n// results.pages[0] = {}\n// pass into results the section\nvar Results = function Results() {\n  _classCallCheck(this, Results);\n\n  this.results = [];\n};\n\n\n\n//# sourceURL=webpack:///./src/js/models/Results.js?");
+
+/***/ }),
+
+/***/ "./src/js/views/base.js":
+/*!******************************!*\
+  !*** ./src/js/views/base.js ***!
+  \******************************/
+/*! exports provided: elements */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"elements\", function() { return elements; });\nvar elements = {\n  calcForms: document.querySelectorAll('.calc-form'),\n  pageName: document.querySelector('input[name=\"page-name\"]'),\n  pageContent: document.querySelector('select[name=\"content\"]'),\n  stockImage: document.querySelector('select[name=\"stock-images\"]'),\n  pageLayout: document.querySelector('input[name=\"page-layout\"]')\n};\n\n//# sourceURL=webpack:///./src/js/views/base.js?");
 
 /***/ }),
 

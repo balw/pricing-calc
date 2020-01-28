@@ -1,5 +1,4 @@
 export const elements = {
-  calcForm: document.querySelector('.calc-form'),
   calcForms: document.querySelectorAll('.calc-form'),
   pageName: document.querySelector('input[name="page-name"]'),
   pageContent: document.querySelector('select[name="content"]'),
