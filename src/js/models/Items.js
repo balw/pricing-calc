@@ -15,6 +15,19 @@ export default class Items {
     this.allItems.extras = [];
   }
 
+  getItem(curItem, type) {
+    if (type === 'page' || type === 'extra') {
+      // Get item values and store in an array
+      const itemsArr = [];
+      [...curItem.elements].forEach(el => {
+        if (el.type === 'text' || el.type === 'select-one' || el.checked || el.type === 'number' || el.id === 'extra-notes') {
+          itemsArr.push(el);
+        }
+      });
+      return itemsArr;
+    }
+  }
+
   add(items, type) {
     if (type === 'page') {
       let pageItem = {};
@@ -22,12 +35,14 @@ export default class Items {
         pageItem[item.dataset.itemkey] = item.value.split('|');
       });
       this.allItems.pages.push(pageItem);
+      return pageItem;
     } else if (type === 'extra') {
       let extraItem = {};
       items.forEach(item => {
         extraItem[item.dataset.itemkey] = item.value;
       });
       this.allItems.extras.push(extraItem);
+      return extraItem;
     }
   }
 }

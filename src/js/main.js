@@ -1,4 +1,5 @@
 import Items from './models/Items';
+import * as itemView from './views/itemView';
 import { elements } from './views/base';
 
 const state = {}
@@ -11,19 +12,11 @@ window.state = state;
 const itemController = (curItem) => {
   // Determine item type
   const type = curItem.dataset.item;
-  if (type === 'page' || type === 'extra' ) {
-    // Get item values and store in an array
-    const itemsArr = [];
-    [...curItem.elements].forEach(el => {
-      if (el.type === 'text' || el.type === 'select-one' || el.checked || el.type === 'number' || el.id === 'extra-notes') {
-        itemsArr.push(el);
-      }
-    });
-    // Create item object and add to all items array;
-    state.items.add(itemsArr, type);
-  } else if (type === 'other') {
-    console.log(curItem.elements);
-  }
+  // get items from form fields
+  const items = state.items.getItem(curItem, type);
+  // Create item object and add to all items array;
+  const itemObj = state.items.add(items, type);
+  console.log(itemObj);
 }
 
 
