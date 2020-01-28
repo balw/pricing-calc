@@ -11,12 +11,12 @@ window.state = state;
  */
 const itemController = (curItem) => {
   // Determine item type
-  const type = curItem.dataset.item;
+  let type = curItem.dataset.item;
   // get items from form fields
-  const items = state.items.getItem(curItem, type);
+  let items = state.items.getItem(curItem, type);
   // Create item object and add to all items array;
-  const itemObj = state.items.add(items, type);
-  console.log(itemObj);
+  let itemObj = state.items.add(items, type);
+  itemView.renderPageItem(itemObj);
 }
 
 
