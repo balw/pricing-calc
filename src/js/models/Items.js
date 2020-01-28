@@ -13,7 +13,6 @@ export default class Items {
   }
 
   add(items, type) {
-    console.log(type);
     if (type === 'page') {
       let pageItem = {};
       items.forEach(item => {
