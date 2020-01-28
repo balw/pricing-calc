@@ -12,12 +12,20 @@ export default class Items {
     this.allItems.extras = [];
   }
 
-  add(items) {
-    const pageItem  = {};
-    items.forEach(item => {
-      const key = item.dataset.itemkey;
-      pageItem[key] = item.value;
-    });
-    this.allItems.pages.push(pageItem);
+  add(items, type) {
+    console.log(type);
+    if (type === 'page') {
+      let pageItem = {};
+      items.forEach(item => {
+        pageItem[item.dataset.itemkey] = item.value;
+      });
+      this.allItems.pages.push(pageItem);
+    } else if (type === 'extra') {
+      let extraItem = {};
+      items.forEach(item => {
+        extraItem[item.dataset.itemkey] = item.value;
+      });
+      this.allItems.extras.push(extraItem);
+    }
   }
 }

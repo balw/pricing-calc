@@ -10,16 +10,18 @@ window.state = state;
  */
 const itemController = (curItem) => {
   // Determine item type
-  if (curItem.dataset.item === 'page') {
-    // Get the item values
+  const type = curItem.dataset.item;
+  if (type === 'page' || type === 'extra' ) {
+    // Get item values and store in an array
     const itemsArr = [];
     [...curItem.elements].forEach(el => {
-      if (el.type === 'text' || el.type === 'select-one' || el.checked) {
+      if (el.type === 'text' || el.type === 'select-one' || el.checked || el.type === 'number' || el.id === 'extra-notes') {
         itemsArr.push(el);
       }
     });
-    state.items.add(itemsArr);
-  } else if (curItem.dataset.item === 'extras') {
+    // Create item object and add to all items array;
+    state.items.add(itemsArr, type);
+  } else if (type === 'other') {
     console.log(curItem.elements);
   }
 }
