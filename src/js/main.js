@@ -9,7 +9,7 @@ window.state = state;
 /**
  * ITEM CONTROLLER
  */
-const itemController = (curItem) => {
+const addItemController = (curItem) => {
   // Determine item type
   let type = curItem.dataset.item;
   // get items from form fields
@@ -21,10 +21,18 @@ const itemController = (curItem) => {
 
 
 
-// listen for add item buttons on the calculator
+// Event listeners
 elements.calcForms.forEach(el => {
   el.addEventListener('submit', e => {
     e.preventDefault();
-    itemController(e.target);
+    addItemController(e.target);
+  });
+});
+
+elements.removeItemBtn.forEach(el => {
+  el.addEventListener('click', e => {
+    
+    // remove from dom
+    el.parentNode.parentNode.remove();
   });
 });
