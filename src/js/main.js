@@ -9,7 +9,7 @@ window.state = state;
 /**
  * ITEM CONTROLLER
  */
-const addItemController = (curItem) => {
+const addPageItemController = (curItem) => {
   // Determine item type
   let type = curItem.dataset.item;
   // get items from form fields
@@ -19,7 +19,7 @@ const addItemController = (curItem) => {
   itemView.renderPageItem(itemObj);
 }
 
-const deleteItemController = (curItem) => {
+const deletePageItemController = (curItem) => {
   const itemID = curItem.target.parentNode.parentNode.id;
   // let type;
   // if (curItem.target.parentNode.parentNode.parentNode.className === 'page-results results-section') {
@@ -42,8 +42,9 @@ const deleteItemController = (curItem) => {
 elements.calcForms.forEach(el => {
   el.addEventListener('submit', e => {
     e.preventDefault();
-    addItemController(e.target);
+    addPageItemController(e.target);
   });
 });
 
-elements.results.addEventListener('click', deleteItemController);
+elements.results.addEventListener('click', deletePageItemController);
+

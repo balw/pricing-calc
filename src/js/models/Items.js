@@ -8,6 +8,7 @@
 //************
 // allItems.extras[0].extraDetails = details / price level for extras
 
+
 export default class Items {
   constructor() {
     this.allItems = [];
@@ -35,6 +36,18 @@ export default class Items {
       items.forEach(item => {
         pageItem[item.dataset.itemkey] = item.value.split('|');
       });
+
+      // sum the item price
+      let itemPrices = [];
+      Object.values(pageItem).forEach(el => {
+        const cur = parseInt(el[1], 10);
+        if(!isNaN(cur)) {
+          itemPrices.push(cur);
+        }
+      });
+
+      const reducer = (accum, el) => accum + el;
+      pageItem.price = itemPrices.reduce(reducer);
       this.allItems.pages.push(pageItem);
 
       // create item id
@@ -48,15 +61,16 @@ export default class Items {
       pageItem.id = id;
       return pageItem;
 
-    } else if (type === 'extra') {
-      let extraItem = {};
-      items.forEach(item => {
-        extraItem[item.dataset.itemkey] = item.value;
-      });
+     }
+     //else if (type === 'extra') {
+    //   let extraItem = {};
+    //   items.forEach(item => {
+    //     extraItem[item.dataset.itemkey] = item.value;
+    //   });
 
-      this.allItems.extras.push(extraItem);
-      return extraItem;
-    }
+    //   this.allItems.extras.push(extraItem);
+    //   return extraItem;
+    // }
   }
 
   remove(type, id) {
