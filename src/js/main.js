@@ -17,22 +17,27 @@ const addPageItemController = (curItem) => {
   // Create item object and add to data strucutre
   let itemObj = state.items.add(items, type);
   itemView.renderPageItem(itemObj);
+  //update price
+  state.items.calc();
+  itemView.updatePrice(state.items.allItems.price);
 }
 
 const deletePageItemController = (curItem) => {
-  const itemID = curItem.target.parentNode.parentNode.id;
+  const itemID = parseInt(curItem.target.parentNode.parentNode.id, 10);
   // let type;
   // if (curItem.target.parentNode.parentNode.parentNode.className === 'page-results results-section') {
   //   type = 'page';
   // } else if (curItem.target.parentNode.parentNode.parentNode.className === 'bespoke-results results-section') {
   //   type = 'bespoke';
   // }
-
   if (itemID) {
     //remove from sata structure 
     state.items.remove(itemID);
     // remove from the dom
     itemView.deletePageItem(itemID);
+    // update price;
+    state.items.calc();
+    itemView.updatePrice(state.items.allItems.price);
   }
 }
 

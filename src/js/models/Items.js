@@ -73,8 +73,16 @@ export default class Items {
     // }
   }
 
-  remove(type, id) {
+  remove(id) {
     const index = this.allItems.pages.findIndex(el => el.id === id);
     this.allItems.pages.splice(index, 1);
+  }
+
+  calc() {
+    let total = 0;
+    this.allItems.pages.forEach(el => { 
+      total += el.price;
+    });
+    this.allItems.price = total;
   }
 }

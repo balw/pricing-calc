@@ -21,3 +21,7 @@ export const deletePageItem = id => {
   const el = document.getElementById(id);
   el.parentElement.removeChild(el);
 }
+
+export const updatePrice = price => {
+  elements.price.textContent = `£${price}`;
+}
