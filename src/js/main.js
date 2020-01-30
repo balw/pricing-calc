@@ -14,9 +14,26 @@ const addItemController = (curItem) => {
   let type = curItem.dataset.item;
   // get items from form fields
   let items = state.items.getItem(curItem, type);
-  // Create item object and add to all items array;
+  // Create item object and add to data strucutre
   let itemObj = state.items.add(items, type);
   itemView.renderPageItem(itemObj);
+}
+
+const deleteItemController = (curItem) => {
+  const itemID = curItem.target.parentNode.parentNode.id;
+  // let type;
+  // if (curItem.target.parentNode.parentNode.parentNode.className === 'page-results results-section') {
+  //   type = 'page';
+  // } else if (curItem.target.parentNode.parentNode.parentNode.className === 'bespoke-results results-section') {
+  //   type = 'bespoke';
+  // }
+
+  if (itemID) {
+    //remove from sata structure 
+    state.items.remove(itemID);
+    // remove from the dom
+    itemView.deletePageItem(itemID);
+  }
 }
 
 
@@ -29,10 +46,4 @@ elements.calcForms.forEach(el => {
   });
 });
 
-elements.removeItemBtn.forEach(el => {
-  el.addEventListener('click', e => {
-    
-    // remove from dom
-    el.parentNode.parentNode.remove();
-  });
-});
+elements.results.addEventListener('click', deleteItemController);

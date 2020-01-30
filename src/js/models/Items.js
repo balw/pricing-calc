@@ -30,19 +30,37 @@ export default class Items {
 
   add(items, type) {
     if (type === 'page') {
+      // store item
       let pageItem = {};
       items.forEach(item => {
         pageItem[item.dataset.itemkey] = item.value.split('|');
       });
       this.allItems.pages.push(pageItem);
+
+      // create item id
+      let id;
+      if (this.allItems.pages.length > 0) {
+        id = (this.allItems.pages.length -1) + 1;
+      } else {
+        id = 0;
+      }
+
+      pageItem.id = id;
       return pageItem;
+
     } else if (type === 'extra') {
       let extraItem = {};
       items.forEach(item => {
         extraItem[item.dataset.itemkey] = item.value;
       });
+
       this.allItems.extras.push(extraItem);
       return extraItem;
     }
+  }
+
+  remove(type, id) {
+    const index = this.allItems.pages.findIndex(el => el.id === id);
+    this.allItems.pages.splice(index, 1);
   }
 }

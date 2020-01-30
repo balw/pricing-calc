@@ -1,5 +1,6 @@
 export const elements = {
   calcForms: document.querySelectorAll('.calc-form'),
+  results: document.querySelector('.results'),
   removeItemBtn: document.querySelectorAll('.btn-delete'),
   pageName: document.querySelector('input[name="page-name"]'),
   pageContent: document.querySelector('select[name="content"]'),
